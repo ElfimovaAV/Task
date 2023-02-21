@@ -8,3 +8,24 @@ if (int(number[0])+int(number[1])+int(number[2])) == (int(number[3])+int(number[
     print('Этот билет счастливый!')
 else:
     print('Этот билет не счастливый!')
+
+# sum_first = int(number[0])+int(number[1])+int(number[2])
+# sum_second = int(number[3])+int(number[4])+int(number[5])
+# print(f'The ticket is lucky: {sum_first == sum_second}')   то есть в выводе будет The ticket is lucky: true
+# или The ticket is lucky: false
+
+# -----------second solution
+number = int(input('Введите шестизначный номер билета: '))
+
+sum_first = 0
+sum_last = 0
+
+while number:
+    digit = number % 10
+    if number > 999:
+        sum_first += digit
+    else:
+        sum_last += digit
+    number //= 10
+
+print(f'The ticket is lucky: {sum_first == sum_last}')
