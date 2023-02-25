@@ -4,6 +4,6 @@
 N = int(input("Введите число: "))
 number = 1
 
-while number < N:
+while number <= N:
     print(number, end=" ")
     number *= 2
