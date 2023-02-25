@@ -7,14 +7,8 @@
 sum = int(input("Введите сумму загаданных чисел: "))
 product = int(input("Введите произведение загаданных чисел: "))
 
-x = 0
-y = 0
-
-for i in range(product):
-    x +=1
-    for J in range(product):
-        y +=1
-        if (sum == x + y) and (product == x * y):
-            print(x, y)
-    else:
-        y = 0
+for x in range(1, product):
+    y = sum - x
+    if (sum == x + y) and (product == x * y):
+        print(x, y)
+        break
