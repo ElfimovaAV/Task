@@ -7,3 +7,19 @@
 list_nums = [int(i) for i in input("Введите элементы списка: ").split()]
 x = int(input("Введите искомое значение: "))
 print(sum([list_nums[i] == x for i in range(len(list_nums))]))
+
+
+
+# 2 способ -------
+list_1 = [int(input("Введите элементы списка: ")) for _ in range(int(input("Введите количество элементов списка: ")))]
+print(list_1.count(int(input("Введите искомое значение: "))))
+
+# 3 способ -------
+from random import choices
+
+num = int(input("Введите количество элементов списка: "))
+list_2 = choices(range(num * 2), k=num)
+print(list_2)
+
+result = list_1.count(int(input("Введите искомое значение: ")))
+print(result)
