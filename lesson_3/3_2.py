@@ -22,3 +22,30 @@ if min_diff_smaller <= min_diff_bigger:
     print(list_nums[min_ind_smaller])
 else:
     print(list_nums[min_ind_bigger])
+
+# 2 способ -------
+from random import randint
+
+list_1 = [randint(1, 21) for _ in range(int(input("Введите количество элементов списка: ")))]
+
+print(list_1)
+num = int(input("Введите искомое значение: "))
+right_num = list_1[0]
+
+for i in list_1:
+    if abs(num - i) < abs(num - right_num):
+        right_num = i
+
+print(right_num)
+
+# 3 способ -------
+from random import randint
+
+n = int(input("Введите количество элементов списка: "))
+list_2 = [randint(1, 50) for _ in range(n)]
+
+print(list_2)
+b = int(input("Введите искомое значение: "))
+m = min(list_2, key=lambda x: abs(x - b))
+
+print(m)
