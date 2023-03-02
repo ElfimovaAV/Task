@@ -29,3 +29,13 @@ word = input("Введите слово: ").upper()
 
 print('Стоимость введенного слова', sum([v for i in word for k, v in dictionary.items() if i in k]), 'очков')
 
+
+# 2 способ---------------
+ang_dict = {"AEIOULNSTRАВЕИНОРСТ": 1, "DGДКЛМПУ": 2,
+            "BCMPБГЁЬЯ": 3, "FHVWYЙЫ": 4, "KЖЗХЦЧ": 5,
+            "JXШЭЮ": 8, "QZФЩЪ": 10}
+
+count = 0
+word = input()
+
+print(sum([i[1] for i in ang_dict.items() for j in word.upper() if j in i[0]]))
