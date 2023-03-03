@@ -27,3 +27,16 @@ for i in range(1, len(list_bashes) - 1):
     if list_bashes[i-1] + list_bashes[i] + list_bashes[i+1] > max_sum:
         max_sum = list_bashes[i-1] + list_bashes[i] + list_bashes[i+1]
 print(max_sum)
+
+# ---2 способ-----
+n = int(input())
+arr = list()
+for i in range(n):
+    x = int(input())
+    arr.append(x)
+
+arr_count = list()
+for i in range(len(arr) - 1):
+    arr_count.append(arr[i - 1] + arr[i] + arr[i + 1])
+arr_count.append(arr[-2] + arr[-1] + arr[0])
+print(max(arr_count))
