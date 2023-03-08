@@ -15,3 +15,15 @@ def amount(a, b):
 n = int(input())
 m = int(input())
 print(amount(n, m))
+
+# ------2 способ (учитываем, что могут зайти отрицательные числа)
+def f(x, y):
+    if y < 0 < x:
+        x, y = y, x
+    if y == 0:
+        return x
+    return f(x + 1, y - 1)
+
+p = int(input())
+t = int(input())
+print(f(p, t))
