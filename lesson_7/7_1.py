@@ -7,9 +7,21 @@
 # напишите “Парам пам-пам”, если с ритмом все в порядке и “Пам парам”, если с ритмом все не
 # в порядке
 
-poem = [len([i for i in el if i.lower() in "аеёиоуыэюя"]) for el in input().split()]
-if all([i == poem[0] for i in poem]):
+# poem = [len([i for i in el if i.lower() in "аеёиоуыэюя"]) for el in input().split()]
+# if all([i == poem[0] for i in poem]):
+#     print("Парам пам-пам")
+# else:
+#     print("Пам парам")
+
+# неверно отрабатывает на слово без гласных (парам пам-пам). Решение другое
+alp = "аеёиоуыэюя"
+word_sug = input().split()
+# vowel_letters = [word.count(char) for word in word_sug
+#                  for char in word if char.lower() in alp]     #подсчитывает уникальные гласные, не подходит
+
+result = [sum([True for j in word if j.lower() in alp]) for word in word_sug]
+
+if all(result) and len(set(result)) == 1:
     print("Парам пам-пам")
 else:
     print("Пам парам")
-
