@@ -12,6 +12,6 @@ def print_operation_table(operation, num_rows, num_columns):
         table = []
         for j in range(1, num_columns + 1):
             table.append(str(operation(i, j)))
-        print(''.join(f'{e:<5}' for e in table))
+        print(''.join(f'{e:<5}' for e in table)) # print(f"{operation(i, j):4}", end=" ")
 
 print_operation_table(lambda x, y: x * y, rows, columns)
